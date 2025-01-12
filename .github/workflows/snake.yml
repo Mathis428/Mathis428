@@ -1,9 +1,7 @@
 name: Generate Snake Animation
 
 on:
-  schedule:
-    - cron: "0 20 * * *" # Ce workflow se déclenche tous les jours à 20h (UTC)
-  workflow_dispatch: # Permet d'exécuter manuellement le workflow
+  workflow_dispatch:  # Permet d'exécuter manuellement le workflow
 
 jobs:
   generate:
@@ -16,7 +14,7 @@ jobs:
       - name: Generate Snake Animation
         uses: Platane/snk@v2
         with:
-          github_user_name: Mathis428
+          github_user_name: Mathis428  # Remplace par ton nom d'utilisateur GitHub si différent
           outputs: dist/snake.svg
 
       - name: Push Snake Animation to output branch
