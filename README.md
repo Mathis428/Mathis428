@@ -1,4 +1,4 @@
-<h2 align="left">My name is Mathis and I'm a 19-year-old engineering student currently studying in Paris.</h2>
+<h2 align="left">My name is Mathis and I'm a 19 year old ECE engineering student currently studying in Paris.</h2>
 
 ###
 
@@ -34,7 +34,8 @@
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" height="30" alt="googlecloud logo"  />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" height="30" alt="flutter logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" height
+="30" alt="flutter logo"  />
 </div>
 
 ###
