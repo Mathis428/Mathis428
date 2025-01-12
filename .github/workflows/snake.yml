@@ -1,24 +1,42 @@
-name: Generate Snake Animation
+name: Generate Snake
 
+# This action runs every 6 hours
 on:
-  workflow_dispatch:  # Permet d'exécuter manuellement le workflow
+  schedule:
+    - cron: "0 */6 * * *"  # Runs every 6 hours
+  workflow_dispatch:  # Allow manual triggering from Actions tab
 
 jobs:
-  generate:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      # Check out the repository
+      - uses: actions/checkout@v3
 
-      - name: Generate Snake Animation
-        uses: Platane/snk@v2
+      # Generate the snake animation
+      - uses: Platane/snk@v2
+        id: snake-gif
         with:
-          github_user_name: Mathis428  # Remplace par ton nom d'utilisateur GitHub si différent
-          outputs: dist/snake.svg
+          github_user_name: Mathis428  # Remplace par ton pseudo GitHub ici
+          gif_out_path: dist/github-contribution-grid-snake.gif
+          svg_out_path: dist/github-contribution-grid-snake.svg
 
-      - name: Push Snake Animation to output branch
-        uses: crazy-max/ghaction-github-pages@v2.6.0
+      # Show status of the build (useful for debugging)
+      - run: git status
+
+      # Push the changes to the repository
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
         with:
-          target_branch: output
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+          force: true
+
+      # Push to the output branch (to make the animation available)
+      - uses: crazy-max/ghaction-github-pages@v2.6.0
+        with:
+          target_branch: output  # Change to the 'output' branch for generated files
           build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
