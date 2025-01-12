@@ -1,6 +1,5 @@
 name: Generate Snake
 
-# This action runs every 6 hours
 on:
   schedule:
     - cron: "0 */6 * * *"  # Runs every 6 hours
@@ -19,8 +18,7 @@ jobs:
         id: snake-gif
         with:
           github_user_name: Mathis428  # Remplace par ton pseudo GitHub ici
-          gif_out_path: dist/github-contribution-grid-snake.gif
-          svg_out_path: dist/github-contribution-grid-snake.svg
+          outputs: dist  # Dossier de sortie des fichiers générés
 
       # Show status of the build (useful for debugging)
       - run: git status
