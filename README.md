@@ -18,10 +18,10 @@
 ###
 
 <div align="center">
-  <img src="https://profile-counter.glitch.me/Mathis428/count.svg?"  />
+  <h2>Visitor Count</h2>
+  <img src="https://profile-counter.glitch.me/Mathis428/count.svg?" alt="Visitor Count" style="width: 200px; height: auto; margin-top: 10px;" />
 </div>
 
-###
 
 ###
 
